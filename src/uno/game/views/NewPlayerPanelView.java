@@ -43,13 +43,14 @@ public class NewPlayerPanelView extends JPanel {
 	playerTextField = new JTextField();
 	playerTextField.setBounds(85, 1, 126, 28);
 	playerTextField.setColumns(10);
+	playerTextField.setToolTipText(UnoConstants.ADD_PLAYERS_MSG);
 
 	addPlayerBtn = new JButton(UnoConstants.ADD_TXT);
 	addPlayerBtn.setBounds(223, 0, 71, 30);
-	addPlayerBtn.setToolTipText(UnoConstants.ADD_PLAYER_TXT);
+	addPlayerBtn.setToolTipText(UnoConstants.ADD_PLAYERS_MSG);
 	addPlayerBtn.setIcon(new ImageIcon(UnoGameHome.class.getResource(UnoFacade.getIconPath(UnoConstants.ADD_IMG, false))));
 
-	playerInfoLbl = new JLabel();
+	playerInfoLbl = new JLabel(UnoConstants.ADD_PLAYERS_MSG);
 	playerInfoLbl.setFont(new Font("Tahoma", Font.BOLD, 11));
 	playerInfoLbl.setForeground(new Color(255, 0, 0));
 	playerInfoLbl.setBounds(0, 28, 294, 27);
@@ -59,12 +60,7 @@ public class NewPlayerPanelView extends JPanel {
 	addNewPlayerPanel.add(addPlayerBtn);
 	addNewPlayerPanel.add(playerInfoLbl);
 
-	addedPlayersList = new JPanel();
-	addedPlayersList.setBounds(0, 58, 239, 360);
-	addedPlayersList.setBackground(new Color(250, 250, 210));
-	addedPlayersList.setBorder(new CompoundBorder(new MatteBorder(3, 3, 3, 3, (Color) new Color(184, 134, 11)), new MatteBorder(2, 2, 2, 2, (Color) new Color(238, 232, 170))));
-	add(addedPlayersList);
-	addedPlayersList.setLayout(new GridLayout(10, 0, 0, 0));
+	createAddedPlayersList();
 
 	pickCardDeck = new JPanel();
 	pickCardDeck.setBackground(SystemColor.inactiveCaption);
@@ -96,6 +92,15 @@ public class NewPlayerPanelView extends JPanel {
 
     public JPanel getPickCardDeck() {
 	return pickCardDeck;
+    }
+
+    public void createAddedPlayersList() {
+	addedPlayersList = new JPanel();
+	addedPlayersList.setBounds(0, 58, 239, 360);
+	addedPlayersList.setBackground(new Color(250, 250, 210));
+	addedPlayersList.setBorder(new CompoundBorder(new MatteBorder(3, 3, 3, 3, (Color) new Color(184, 134, 11)), new MatteBorder(2, 2, 2, 2, (Color) new Color(238, 232, 170))));
+	add(addedPlayersList);
+	addedPlayersList.setLayout(new GridLayout(10, 0, 0, 0));
     }
 
 }

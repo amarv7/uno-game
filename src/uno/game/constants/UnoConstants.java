@@ -65,7 +65,8 @@ public interface UnoConstants {
     String ANNOUNCE_UNO_OR_DRAW_MSG = "Announce UNO or Draw two cards!";
     String SELECT_COLORS = "-- Select Color --";
     String PLAY_CARD_TO_WIN = "Play your card to Win!";
-    String COPYRIGHT_TXT = "Copyright \u00A9 2015 - UNO Game (Version 1.1)";
-    String DEVELOPED_BY_TXT = "Design & developed by Amar Verma";
+    String COPYRIGHT_TXT = "Copyright \u00A9 2015 - UNO Game - All Rights Reserved";
+    String DEVELOPED_BY_TXT = "Design & developed by MGS";
     String GAME_REQ_TXT = "Game required Java 1.8 to Run and Play";
+    String ADD_PLAYERS_MSG = "Please Add two or more Players to play the Game!";
 }

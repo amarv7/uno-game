@@ -113,7 +113,7 @@ public class UnoViewEventHandler {
      */
     public void init() {
 	bindEvents();
-	playerInfoLbl.setText(null);
+	playerInfoLbl.setText(UnoConstants.ADD_PLAYERS_MSG);
 	infoMesg.setText(null);
 	startGameBtn.setEnabled(false);
 	startMenuItem.setEnabled(false);
@@ -602,7 +602,7 @@ public class UnoViewEventHandler {
 	cardTiles.removeAll();
 	addedPlayersPanel.removeAll();
 	infoMesg.setText(null);
-	playerInfoLbl.setText(null);
+	playerInfoLbl.setText(UnoConstants.ADD_PLAYERS_MSG);
 	playerNameLbl.setText(null);
 	infoImg.setVisible(false);
 	announceBtn.setVisible(false);
@@ -639,6 +639,7 @@ public class UnoViewEventHandler {
 		addedPlayersPanel.remove(player);
 		gameManagerService.removePlayer(player.getPlayerName());
 		enableStartGameOption();
+		validate();
 	    }
 	});
 	player.getPickCardBtn().addActionListener(new ActionListener() {
@@ -666,7 +667,6 @@ public class UnoViewEventHandler {
      */
     private CardThumbnail getPlayerCard(String cardName) {
 	CardThumbnail card = new CardThumbnail(cardName, CardSection.PLAYER_CARDS);
-
 	card.addMouseListener(new MouseAdapter() {
 	    @Override
 	    public void mouseExited(MouseEvent e) {

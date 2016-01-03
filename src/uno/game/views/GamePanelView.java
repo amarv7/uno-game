@@ -132,4 +132,5 @@ public class GamePanelView extends JPanel {
     public JPanel getDiscardPile() {
 	return discardPile;
     }
+
 }
